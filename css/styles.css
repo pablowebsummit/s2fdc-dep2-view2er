@@ -1,0 +1,13 @@
+.header-style {
+  background-color: #163463;
+  color: white;
+  max-height: 200px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.no-left-margin {
+  margin-left: 0px;
+}
+.somethingnew {
+  margin: 2px;
+}
