@@ -9,7 +9,12 @@
     "lite": "lite-server",
     "watch:less": "onchange 'css/*.less' -- npm run cless",
     "cless": "lessc css/styles.less css/styles.css",
-    "watch:all": "parallelshell 'npm run watch:less' 'npm run lite'"
+    "watch:all": "parallelshell 'npm run watch:less' 'npm run lite'",
+    "clean": "rimraf dist",
+    "copyFonts": "copyfiles -f node_modules/font-awesome/fonts/* dist/fonts",
+    "imagemin": "imagemin img/* -o dist/img",
+    "usemin": "usemin index.html -d dist --htmlmin -o dist/index.html",
+    "build":"npm run clean && npm run copyFonts && npm run usemin"
   },
   "author": "Pablo Gonzalez",
   "license": "ISC",
@@ -17,7 +22,11 @@
     "less": "^2.7.2",
     "lite-server": "^2.5.4",
     "onchange": "^3.3.0",
-    "parallelshell": "^3.0.1"
+    "parallelshell": "^3.0.1",
+    "rimraf": "^2.6.2",
+    "uglifyjs": "^2.4.11",
+    "usemin-cli": "^0.5.1",
+    "imagemin-cli": "^3.0.0"
   },
   "dependencies": {
     "bootstrap": "^4.0.0",
