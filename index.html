@@ -1,72 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- build:css css/main.css -->
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!-- build:css css/main.css 
+    <ink rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">--> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>  
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/framework.css">
     <link rel="stylesheet" href="css/styles.css">
-    <title>SFDC Dep Viewer</title>
+    <title>SFDC Dependency Manager</title>
     <!-- endbuild -->
 </head>
-<body>
-    <header class="jumbotron header-style">
-        <div class="container no-left-margin">
-            <div class="row">
-                <div class="col">
-                    <h1>SFDC Dev Viewer | Help</h1>
-                    <p>General information and support</p>
-                </div>
-            </div>
-        </div>
-    </header>
 
-    <section class="container no-left-margin">
-        <div class="row">
-            <div class="col">
-                <h3>How to use</h3>
-                <p>Curabitur vehicula libero sit amet gravida finibus. Morbi hendrerit porttitor nibh 
-                    at iaculis. Mauris fringilla blandit tortor, ut dictum lacus tincidunt vitae.
-                    Aliquam non tempus mauris, id placerat nisl. Integer rutrum sollicitudin tincidunt. 
-                    Maecenas nisl dolor, euismod sed rhoncus ultrices, sollicitudin et lacus. 
-                    Vestibulum ullamcorper hendrerit lacus at consequat.
-                </p>
-            </div>
-        </div>
-    </section>
+<body >
 
-    <section class="container no-left-margin">
-        <div class="row">
-            <div class="col">
-                <h3>Supported Types</h3>
-                <p>Curabitur vehicula libero sit amet gravida finibus. Morbi hendrerit porttitor nibh 
-                    at iaculis. Mauris fringilla blandit tortor, ut dictum lacus tincidunt vitae.
-                    Aliquam non tempus mauris, id placerat nisl. Integer rutrum sollicitudin tincidunt. 
-                    Maecenas nisl dolor, euismod sed rhoncus ultrices, sollicitudin et lacus. 
-                    Vestibulum ullamcorper hendrerit lacus at consequat.
-                </p>
-            </div>
-        </div>
-    </section>
+    <section class="intro-box">
+      
+      <section>
+          <h1>Salesforce Dependencies Manager</h1>
+          <div class="taglines">
+          <p>Discover package boundaries</p>
+          <p>Generate package.xml files based on those boundaries</p>
+          <p>View metadata-specific dependencies</p>
+          </div>
+          <div class="video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/exZ3TICOzd8" 
+            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen></iframe>
+          </div>
+          <label for="environment">Environment  </label>
 
-    <section class="container no-left-margin">
-        <div class="row">
-            <div class="col">
-                <h3>Views</h3>
-                <p>Curabitur vehicula libero sit amet gravida finibus. Morbi hendrerit porttitor nibh 
-                    at iaculis. Mauris fringilla blandit tortor, ut dictum lacus tincidunt vitae.
-                    Aliquam non tempus mauris, id placerat nisl. Integer rutrum sollicitudin tincidunt. 
-                    Maecenas nisl dolor, euismod sed rhoncus ultrices, sollicitudin et lacus. 
-                    Vestibulum ullamcorper hendrerit lacus at consequat.
-                </p>
-            </div>
-        </div>
+          <select id="environment">
+          <option value="sandbox">Sandbox</option>
+          <option value="production">Production</option>
+        </select>
+          <button class="base-hover-grow">Login with OAuth   <i class="fa fa-sign-in"></i></button>
+      </section>
+      
+
     </section>
-    <!-- build:js js/main.js-->
-    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
-    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- endbuild -->
+    
+
+
+
+
+
+
+
+
+
+
+
+    
+    <script>
+      $(document).ready(function(){
+        //Get access token.
+        //Because the access token is a URL parameter it needs to be decoded
+           var accessToken = decodeURI(getURLParameter('access_token'));
+           console.log(accessToken);
+           //window.location.replace('http://localhost:3000/');
+ 
+            //Use this function to get the access token from the URL
+            function getURLParameter(param)
+             {
+               var mainURL = document.location+'';
+               var pageUrls = mainURL.split('#');
+               var urlVars = pageUrls[1].split('&');
+               for (var i = 0; i < urlVars.length; i++) 
+                 {
+                   var paramName = urlVars[i].split('=');
+                   if (paramName[0] == param) 
+                     {
+                        return paramName[1];
+                      }
+                   }
+                }
+        })
+    </script>
+   
 </body>
+
+
 </html>
