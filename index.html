@@ -10,38 +10,61 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>  
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/framework.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/login-page.css">
     <title>SFDC Dependency Manager</title>
     <!-- endbuild -->
 </head>
 
-<body >
+<body>
 
-    <section class="intro-box">
-      
-      <section>
-          <h1>Salesforce Dependencies Manager</h1>
-          <div class="taglines">
-          <p>Discover package boundaries</p>
-          <p>Generate package.xml files based on those boundaries</p>
-          <p>View metadata-specific dependencies</p>
-          </div>
+  <main class="grid">
+
+    
+
+    <section class="login">
+      <div class="login-inner ">
+        <h1>Salesforce Dependencies Manager</h1>
+        <div class="base-x-line"></div>
+        <div class="env-selection">
+            <label for="environment">Environment  </label>
+
+            <select id="environment">
+            <option value="sandbox">Sandbox</option>
+            <option value="production">Production</option>
+          </select>
+        </div>
+       
+        <button id="login-button" >Login with OAuth   <i class="fa fa-sign-in"></i></button>
+    </div>
+    <footer>
+        <p>This application uses the Tooling REST API to query your org's metadata. All the API calls
+          are made on the fly and we do not store your metadata. We will also not query or update your org's 
+          data in anyway. For your own security and peace of mind however, <strong>we strongly recommend
+            using this application with a sandbox environment.
+          </strong>
+        </p>
+      </footer>
+    </section>
+    
+
+    <section class="info">
+      <div class="info-inner ">
+        <div class="taglines">
+          <p><i class="fa fa-check"></i>  Discover package boundaries</p>
+          <p><i class="fa fa-check"></i>  Generate package.xml files based on those boundaries</p>
+          <p><i class="fa fa-check"></i>  View metadata-specific dependencies</p>
+        </div>
           <div class="video">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/exZ3TICOzd8" 
             frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen></iframe>
-          </div>
-          <label for="environment">Environment  </label>
-
-          <select id="environment">
-          <option value="sandbox">Sandbox</option>
-          <option value="production">Production</option>
-        </select>
-          <button class="base-hover-grow">Login with OAuth   <i class="fa fa-sign-in"></i></button>
-      </section>
-      
-
+        </div>
+    </div>
     </section>
+
+  </main>
+
+
     
 
 
@@ -56,6 +79,26 @@
 
     
     <script>
+
+          $(document).ready(function(){
+           $('#login-button').click(function(){
+           //The clientId and consumerSecret are the ones from the Connected App
+           var clientId = "3MVG9I5UQ_0k_hTmZuUMosHPf.2zqzHBqd0j.GMmnThrGhd53n4prfPpHNqSAPRrWzc7Hb0ul.s2m4VYoiWyZ";
+           //Authorization endpoint
+           var authEndPoint = "https://login.salesforce.com/services/oauth2/authorize";
+           //response_type must be set to token
+           var responseType = "token";
+           //This is the callback URL from the connected app
+           var redirectURI = "http://localhost:3000";
+           //Construct the URL with the required parameters
+           var requestURL = authEndPoint+'?client_id='+clientId+'&response_type='+responseType+'&redirect_uri='+redirectURI;
+           //redirect the user to the endpoint 
+           window.location = requestURL;
+           });
+        })
+
+
+      /*
       $(document).ready(function(){
         //Get access token.
         //Because the access token is a URL parameter it needs to be decoded
@@ -78,7 +121,7 @@
                       }
                    }
                 }
-        })
+        })*/
     </script>
    
 </body>

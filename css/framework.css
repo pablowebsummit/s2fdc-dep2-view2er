@@ -49,6 +49,8 @@ header,div,section,nav,footer{
     margin:2px;    
 }*/
 
+
+
 /*
 Makes any header relative so that I can position images, nav bars, etc
 using an absolute position
@@ -63,7 +65,7 @@ Any nav inside a header will be position on the right side of the header
 */
 header nav{
     position: absolute;
-    top:30px;
+    top:15px;
     right:30px;
 }
 

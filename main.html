@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- build:css css/main.css 
+    <ink rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">--> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>  
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/framework.css">
+    <link rel="stylesheet" href="css/main-page.css">
+    <title>SFDC Dependency Manager</title>
+    <!-- endbuild -->
+</head>
+
+<body>
+
+    <main class="grid">
+
+    <header>
+        <h3>Salesforce Depedencies Manager</h3>
+        <nav>
+            <a href="">Docs</a>
+        </nav>
+    </header>
+    <div class="form">
+        <select>
+            <option value="ApexClass">ApexClass</option>
+            <option value="ApexClass">ApexTrigger</option>
+            <option value="ApexClass">Visualforce</option>
+            <option value="ApexClass">Visualforce</option>
+            <option value="ApexClass">Visualforce</option>
+            <option value="ApexClass">Visualforce</option>
+            <option value="ApexClass">Visualforce</option>
+            <option value="ApexClass">Visualforce</option>
+            <option value="ApexClass">Visualforce</option>
+            <option value="ApexClass">Visualforce</option>
+        </select>
+        <input placeholder="Name of metadata..." class="base-input" type="text">
+        <button>Find Dependencies</button>
+    </div>
+    <div class="controls base-flex-start">
+        <button title="Filter"> <i class="fa fa-filter"></i></button>
+        <button title="Expand All">  <i class="fa fa-expand"></i></button>
+        <button title="Collapse All"> <i class="fa fa-compress"></i></button>
+        <button class="generate-package">Generate package.xml     <i class="fa fa-download"> </i></button>
+    </div>
+    <section class="canvas">
+        <section class="dependencies">
+            <div>
+                <p>Include in package</p>
+            </div>
+
+            <ul>
+                <li>
+                    <span> <i class="fa fa-folder"></i> Lead_ConversionApi</span>
+                    <ul>
+                        <li><i class="fa fa-code"></i> Lead_Gender__c</li>
+                        <li>
+                            <span><i class="fa fa-folder"></i> Lead.Rating__c</span>
+                            <ul>
+                                <li><i class="fa fa-code"></i> Lead.Country__c</li>
+                                <li><i class="fa fa-code"></i> Lead.Formula__c</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+
+           <div class="row base-flex-start">
+
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                </label>
+                <div class="details">
+                    <strong>Lead_ConversionApi</strong> <i class="fa fa-lg fa-angle-right"></i> Account.Rating__c 
+                </div>
+
+           </div>
+
+
+           <div class="row base-flex-start">
+
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                </label>
+                <div class="details">
+                    <strong>Lead_ConversionApi</strong> <i class="fa fa-lg fa-angle-right"></i> Lead_ConversionContext <i class="fa fa-lg fa-angle-right"></i> <i class="fa fa-folder"></i> ( 14 more)
+                </div>
+
+           </div>
+
+
+           <div class="row base-flex-start">
+
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                </label>
+                <div class="details">
+                   <div>
+                       <strong>Lead_ConversionApi</strong> <i class="fa fa-lg fa-angle-right"></i> Lead.Campaign_Name__c <i class="fa fa-lg fa-angle-right"></i> <i class="fa fa-folder"></i> ( 1 more)
+                       <div class="sub-folder2">
+                            <p>Lead.Gender__c</p>
+                            <p>Lead.Country__c</p>
+                            <p>Lead.How_did_you_meet_us__c</p>
+                            <p>Lead.Gender__c <i class="fa fa-lg fa-angle-right"></i> <i class="fa fa-folder"></i> (1 more)</p>  
+                        </div> 
+                   </div>      
+                </div>
+           </div>
+
+           <div class="row base-flex-start">
+
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                </label>
+                <div class="details">
+                    <div>
+                        <strong>Lead_ConversionApi</strong> <i class="fa fa-lg fa-angle-right"></i> Lead.Rating__c  <i class="fa fa-lg fa-angle-right"></i> <i class="fa fa-folder-open"></i> ( 5 more) 
+                        <div class="sub-folder2">
+                            <p>Lead.Gender__c</p>
+                            <p>Lead.Country__c</p>
+                            <p>Lead.How_did_you_meet_us__c</p>
+                            <p>Lead.Gender__c <i class="fa fa-lg fa-angle-right"></i> <i class="fa fa-folder"></i> (1 more)</p>  
+                        </div> 
+                    </div>         
+                </div>
+           </div>
+
+        </section>
+    </section>
+
+</main>
+    
+</body>
+
+</html>
