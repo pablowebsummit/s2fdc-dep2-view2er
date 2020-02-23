@@ -1,24 +1,10 @@
 body{
-    background-color:#34495e;
+    background-color:#2d3436;
     color:#ecf0f1;
     font-family: "Open Sans",sans-serif;
-    
-}
-
-.grid{
-    display:grid;
-    height: 100vh;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 2fr 1fr 15fr;
-    grid-template-areas: 
-    "header"
-    "form"
-    "controls"
-    "canvas"
 }
 
 header{
-    grid-area: header;
     background:#2c3e50;  
 }
 
@@ -30,14 +16,14 @@ header nav a{
     color:#ecf0f1;
 }
 
+.form{    
+    padding:10px;
+}
 
-.form{
-    margin-top:10px;
-    grid-area:form;
-    width: 600px;
+.inner-form{
     display: flex;
     flex-direction: column;
-    padding:10px;
+    width: 600px;
 }
 
 .form button{
@@ -52,7 +38,6 @@ header nav a{
 .form button:hover{
     transform: scale(1.06);
 }
-
 
 .form button::before{
     content: "";
@@ -71,7 +56,6 @@ header nav a{
     height: 900%;
 }
 
-
 .form select, .form input, .form button{
     width: 40%;
     height:30px;
@@ -86,8 +70,8 @@ header nav a{
    margin-bottom: 10px;
 }
 
-.controls{
-    grid-area: controls;
+.controls,.form{
+    background-color:#34495e;
 }
 
 .controls button{
@@ -95,6 +79,7 @@ header nav a{
     height: 30px;   
     margin: 10px 10px;
     background:#2980b9;
+    width: 115px;
     transition: .5s ease;
     color:white;
 }
@@ -115,24 +100,20 @@ header nav a{
     background:#f39c12;
 }
 
-.canvas{
-    grid-area: canvas;
-    position: relative;
-}
 
-.dependencies{
-    height:99%;
-    width: 99%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+.dependencies{    
     background: #2d3436;
-
+    font-size: 15px;
+    padding-top:5px;
+    
 }
 
 .dependencies > div{
     margin-left:10px;
+}
+
+.how-many{
+    font-size: 12px;
 }
 
 .fa-folder, .fa-folder-open{
@@ -150,6 +131,7 @@ header nav a{
 
 ul{
     list-style: none;
+    line-height: 25px;
 }
 
 select {  
