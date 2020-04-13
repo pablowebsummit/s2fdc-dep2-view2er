@@ -7,6 +7,7 @@
     "start": "npm run start-dev",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lite": "lite-server",
+    "start-express":"node server/index.js",
     "monitor-less-files": "onchange 'css/*.less' -- npm run cless",
     "compile-less-files": "lessc css/styles.less css/styles.css",
     "start-dev": "parallelshell 'npm run monitor-less-files' 'npm run lite'",
@@ -14,7 +15,7 @@
     "copy-fonts-to-dist": "copyfiles -f node_modules/font-awesome/fonts/* dist/fonts",
     "min-images-to-dist": "imagemin img/* -o dist/img",
     "min-all-files": "usemin index.html -d dist --htmlmin -o dist/index.html",
-    "build":"npm run clean-dist && npm run copy-fonts-to-dist && npm run min-images-to-dist && npm run min-all-files"
+    "build": "npm run clean-dist && npm run copy-fonts-to-dist && npm run min-images-to-dist && npm run min-all-files"
   },
   "author": "Pablo Gonzalez",
   "license": "ISC",
@@ -30,8 +31,10 @@
   },
   "dependencies": {
     "bootstrap": "^4.0.0",
+    "express": "^4.17.1",
     "font-awesome": "^4.7.0",
     "jquery": "^3.3.1",
+    "jsforce": "^1.9.3",
     "popper.js": "^1.12.9"
   }
 }

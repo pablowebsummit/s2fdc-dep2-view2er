@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- build:css css/main.css 
+    <ink rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">--> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>  
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jsforce/1.9.1/jsforce.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/framework.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>SFDC Dependency Manager</title>
+    <!-- endbuild -->
+</head>
+
+<body>
+
+    <main class="gr2id">
+
+    <header>
+        <h3>Salesforce Depedencies Manager</h3>
+        <nav>
+            <a href="">Docs</a>
+        </nav>
+    </header>
+    <div class="form">
+        <div class="inner-form">
+            <select>
+                <option value="ApexClass">ApexClass</option>
+                <option value="ApexClass">ApexTrigger</option>
+                <option value="ApexClass">Visualforce</option>
+                <option value="ApexClass">Visualforce</option>
+                <option value="ApexClass">Visualforce</option>
+                <option value="ApexClass">Visualforce</option>
+                <option value="ApexClass">Visualforce</option>
+                <option value="ApexClass">Visualforce</option>
+                <option value="ApexClass">Visualforce</option>
+                <option value="ApexClass">Visualforce</option>
+            </select>
+            <input placeholder="Name of metadata..." class="base-input" type="text" id="input-field">
+            <button id="find-button">Find Dependencies</button>
+    </div>
+    </div>
+    <div class="controls base-flex-start">
+        <button id="filter-button" title="Filter">Filter <i class="fa fa-filter"></i></button>
+        <button id="expand-button" title="Expand All">Expand all <i class="fa fa-expand"></i></button>
+        <button id="collapse-button" title="Collapse All">Collapse all <i class="fa fa-compress"></i></button>
+        <button id="package-button" class="generate-package">Generate package.xml     <i class="fa fa-download"> </i></button>
+    </div>
+</main>
+
+
+        <section class="dependencies">
+
+            <div>
+                <!-- THIS COULD BE
+                MODELED USING THE TEMPLATE PATTERN
+            https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template-->
+            <ul>
+                <li>
+                     <i class="fa fa-folder-open"></i> Lead_ConversionApi <span class="how-many">(2)</span>
+                    <ul>     
+                        <li>
+                            <i class="fa fa-folder-open"></i> CustomField <span class="how-many">(2)</span>
+                            <ul>
+                                <li><i class="fa fa-code"></i> Lead.Country__c</li>
+                                <li><i class="fa fa-code"></i> Lead.Formula__c</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <i class="fa fa-folder"></i> CustomObject <span class="how-many">(1)</span>
+                            <ul>
+                                <li><i class="fa fa-code"></i>Custom_Metadata__mtd</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <i class="fa fa-folder"></i> ApexClass <span class="how-many">(2)</span>
+                            <ul>
+                                <li><i class="fa fa-code"></i> Lead_ConversionContext</li>
+                                <li><i class="fa fa-code"></i> Utils_ApexErrorLogger
+                                    <ul>
+                                        <li>
+                                            <i class="fa fa-folder-open"></i> CustomField <span class="how-many">(2)</span>
+                                            <ul>
+                                                <li><i class="fa fa-code"></i> Apex_Error_Log__c.error__c</li>
+                                                <li><i class="fa fa-code"></i> Apex_Error_Log__c.error_detail__c</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li> 
+                            </ul>
+                        </li>      
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="ui-mode-section">
+            <span id="switch-mode-text">Switch to light mode</span>
+            <label class="switch">
+                <input type="checkbox" id="ui-mode-toggler">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+        </section>
+
+    <script src="js/mainmodule.js" type="module"></script>
+    
+</body>
+
+</html>

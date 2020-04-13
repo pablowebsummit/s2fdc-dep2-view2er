@@ -4,6 +4,12 @@ body{
     font-family: "Open Sans",sans-serif;
 }
 
+.body-light{
+    background-color: #ecf0f1;
+}
+
+
+
 header{
     background:#2c3e50;  
 }
@@ -12,6 +18,7 @@ header nav a{
     border: 2px solid #3498db;
     margin:0;
     padding-left:30px;
+    margin-left: 30px;
     padding-right:30px;
     color:#ecf0f1;
 }
@@ -105,11 +112,28 @@ header nav a{
     background: #2d3436;
     font-size: 15px;
     padding-top:5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     
+}
+
+.dependencies-light{
+    background-color: #ecf0f1;
+    color:#2d3436;
 }
 
 .dependencies > div{
     margin-left:10px;
+}
+
+.ui-mode-section{
+    margin-right:20px;
+    margin-top: 10px;
+}
+
+#switch-mode-text{
+    margin-right:10px;
 }
 
 .how-many{
@@ -172,7 +196,7 @@ select {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #e74c3c;
+    background-color: #f1c40f;
     -webkit-transition: .4s;
     transition: .4s;
   }
@@ -190,11 +214,11 @@ select {
   }
   
   input:checked + .slider {
-    background-color: #2ecc71;
+    background-color: #2d3436;
   }
   
   input:focus + .slider {
-    box-shadow: 0 0 1px #2ecc71;
+    box-shadow: 0 0 1px #2d3436;
   }
   
   input:checked + .slider:before {
